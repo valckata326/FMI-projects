@@ -1,0 +1,28 @@
+<div class="login">
+  <div class="login-triangle"></div>
+
+  <h2 class="login-header">Student Management Application</h2>
+
+  <form class="login-container" [formGroup] = "registerForm" method="post">
+    <p><input type="username" name="username" id="username"
+              formControlName="username" placeholder="Username" required=""></p>
+    <p><input type="password" name="password" id="password"
+              formControlName="password" placeholder="Password" required=""></p>
+    <p><input type="text" name="name" id="name"
+              formControlName="name" placeholder="Name" required=""></p>
+    <p><input type="text" name="age" id="age"
+              formControlName="age" placeholder="Age" required=""></p>
+    <p id="error_message" hidden>Cannot create user with the provided data</p>
+    <p><input type="submit" value="Register" (click)="registerStudent()"></p>
+    <p><input type="submit" value="Already have an account? Sign in" (click)="signIn()"></p>
+  </form>
+</div>
+
+<div class="navigate_definite_user">
+  <form class="register_navigation">
+    <p><input type="button" value="User" (click)="navigateToRegisterUser()"></p>
+    <p><input type="button" value="Teacher" (click)="navigateToRegisterTeacher()"></p>
+  </form>
+</div>
+
+

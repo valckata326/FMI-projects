@@ -1,0 +1,23 @@
+<div class="login">
+  <div class="login-triangle"></div>
+
+  <h2 class="login-header">Student Management Application</h2>
+
+  <form class="login-container">
+    <p><input type="username" placeholder="Username"></p>
+    <p><input type="password" placeholder="Password"></p>
+    <p><input type="text" placeholder="Name"></p>
+    <p><input type="hidden" name="age" placeholder="Age" ></p>
+    <p><input type="submit" value="Register"></p>
+    <p><input type="submit" value="Already have an account? Sign in" (click)="signIn()"></p>
+  </form>
+</div>
+
+<div class="navigate_definite_user">
+  <form class="register_navigation">
+    <p><input type="button" value="Student" (click)="navigateToRegisterStudent()"></p>
+    <p><input type="button" value="Teacher" (click)="navigateToRegisterTeacher()"></p>
+  </form>
+</div>
+
+

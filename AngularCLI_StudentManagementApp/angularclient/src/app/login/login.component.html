@@ -1,0 +1,13 @@
+<div class="login">
+  <div class="login-triangle"></div>
+
+  <h2 class="login-header">Student Management Application</h2>
+
+  <form class="login-container" method="post" [formGroup] = "loginForm" (ngSubmit)="login()">
+    <p><input type="text" class="form-control" name="username" id="username" formControlName="username" placeholder="Username" required=""></p>
+    <p><input type="password" class="form-control" name="password" id="password" formControlName="password" placeholder="Password" required=""></p>
+    <p id="error_message"hidden>Invalid username or password</p>
+    <p><input type="submit" value="Log in"></p>
+    <p><input type="submit" value="Don't have account? Register now!" (click)="navigateToRegister()"></p>
+  </form>
+</div>
