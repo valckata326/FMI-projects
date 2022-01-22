@@ -1,6 +1,6 @@
 package com.example.studentmanagementapplicationn.jwt;
 
-import com.example.studentmanagementapplicationn.security.UserDetailsImpl;
+import com.example.studentmanagementapplicationn.auth.UserDetailsImpl;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;

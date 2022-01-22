@@ -87,6 +87,7 @@ export class AddStudentToCourseComponent implements OnInit {
     this.httpClient.get(address, {headers: this.contentType})
       .subscribe(response => {
         console.log(response);
+        window.location.reload();
       });
   }
 

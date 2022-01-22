@@ -41,9 +41,12 @@ export class AddStudentGradeToCourseComponent implements OnInit {
 
   takeCourseStudents() {
     // @ts-ignore
-    let selectCourse: HTMLSelectElement = document.getElementById("course");
+    let selectCourse: HTMLSelectElement = document.getElementById("add-grade-course");
+    console.log(selectCourse);
     let optionString = selectCourse.options[selectCourse.selectedIndex].value;
+    console.log(optionString);
     let courseId: number = Number(optionString.split(" ")[0]);
+    console.log(courseId);
     let address = this.GET_STUDENTS_FROM_COURSE + '/' + courseId;
     this.students = [];
     this.httpClient.get(address, {headers: this.contentType})
@@ -94,6 +97,7 @@ export class AddStudentGradeToCourseComponent implements OnInit {
     let selectCourse: HTMLSelectElement = document.getElementById("add-grade-course");
     let optionCourse = selectCourse.options[selectCourse.selectedIndex].value;
     let courseID: number = Number(optionCourse.split(" ")[0]);
+    
     // @ts-ignore
     let selectStudent: HTMLSelectElement = document.getElementById("add-grade-students");
     let optionStudent = selectStudent.options[selectStudent.selectedIndex].value;

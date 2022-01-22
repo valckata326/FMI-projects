@@ -1,9 +1,9 @@
 package com.example.studentmanagementapplicationn.services;
 
 import com.example.studentmanagementapplicationn.entity.base.Degree;
-import com.example.studentmanagementapplicationn.entity.dto.StudentRegisterModel;
-import com.example.studentmanagementapplicationn.entity.dto.TeacherRegisterModel;
-import com.example.studentmanagementapplicationn.entity.dto.UserRegisterModel;
+import com.example.studentmanagementapplicationn.models.dto.StudentRegisterModel;
+import com.example.studentmanagementapplicationn.models.dto.TeacherRegisterModel;
+import com.example.studentmanagementapplicationn.models.dto.UserRegisterModel;
 import com.example.studentmanagementapplicationn.entity.university.Student;
 import com.example.studentmanagementapplicationn.entity.university.Teacher;
 import com.example.studentmanagementapplicationn.entity.users.Role;
@@ -18,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 @Service

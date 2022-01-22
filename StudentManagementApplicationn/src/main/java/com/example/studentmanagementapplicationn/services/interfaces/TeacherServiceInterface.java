@@ -1,6 +1,6 @@
 package com.example.studentmanagementapplicationn.services.interfaces;
 
-import com.example.studentmanagementapplicationn.entity.dto.CoursePlusTeacherModel;
+import com.example.studentmanagementapplicationn.models.dto.CoursePlusTeacherModel;
 import com.example.studentmanagementapplicationn.entity.university.Teacher;
 import com.example.studentmanagementapplicationn.models.CourseNameAverageGradeModel;
 import com.example.studentmanagementapplicationn.models.TeacherNameIdModel;

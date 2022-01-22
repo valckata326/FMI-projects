@@ -7,6 +7,7 @@ import {StudentRegisterComponent} from "./register/user/student-register/student
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {AuthGuardService} from "./_services/auth.guard.service";
 import {CoursePageComponent} from "./course/course-page/course-page.component";
+import {AdminPageComponent} from "./admin-page/admin-page.component";
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'course',
     component: CoursePageComponent, canActivate: [AuthGuardService]
+  },
+  {
+    path: 'admin',
+    component: AdminPageComponent, canActivate: [AuthGuardService]
   }
 ];
 

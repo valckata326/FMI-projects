@@ -1,4 +1,4 @@
-package com.example.studentmanagementapplicationn.security;
+package com.example.studentmanagementapplicationn.auth;
 
 import com.example.studentmanagementapplicationn.entity.users.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -8,7 +8,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.GeneratedValue;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;

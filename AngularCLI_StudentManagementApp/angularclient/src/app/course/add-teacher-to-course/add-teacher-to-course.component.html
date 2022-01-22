@@ -1,12 +1,17 @@
-<div *ngIf="isAdmin() || isTeacher()" class="box">
-  <h2>Assign teacher to course:</h2>
-  <select (change)="makeTeachersVisible(); makeAddTeacherForCourseButtonVisible()" class="add-teacher-select-menu" id="add-teacher-course" placeholder="Select course">
-    <option>Select course</option>
-    <option *ngFor="let course of courses">{{course.courseId}} {{course.courseName}}</option>
-  </select>
-  <select style="visibility: hidden;" id="add-teacher-teacher" class="add-teacher-select-menu">
-    <option>Select teacher</option>
-    <option *ngFor="let teacher of teachers">{{teacher.teacherId}} {{teacher.teacherName}}</option>
-  </select>
-  <input (click)="addTeacherToCourse()" style="visibility: hidden" id="add-teacher-to-course-button" type="button" value="Add teacher to course"/>
+
+<div class="login" class="box">
+  <div class="login-triangle"></div>
+  <h2 class="login-header">Add Teacher to Course</h2>
+  <form class="login-container">
+    <select (change)="makeTeachersVisible(); makeAddTeacherForCourseButtonVisible()" class="add-teacher-select-menu" id="add-teacher-course" placeholder="Select course">
+      <option>Select course</option>
+      <option *ngFor="let course of courses">{{course.courseId}} {{course.courseName}}</option>
+    </select>
+    <select style="visibility: hidden;" id="add-teacher-teacher" class="add-teacher-select-menu">
+      <option>Select teacher</option>
+      <option *ngFor="let teacher of teachers">{{teacher.teacherId}} {{teacher.teacherName}}</option>
+    </select>
+    <input (click)="addTeacherToCourse()" style="visibility: hidden" id="add-teacher-to-course-button" type="button" value="Add teacher to course"/>
+  </form>
 </div>
+

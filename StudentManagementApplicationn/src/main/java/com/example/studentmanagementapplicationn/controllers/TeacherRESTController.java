@@ -1,8 +1,6 @@
 package com.example.studentmanagementapplicationn.controllers;
 
-import com.example.studentmanagementapplicationn.constants.Constants;
-import com.example.studentmanagementapplicationn.entity.ResponseMessage;
-import com.example.studentmanagementapplicationn.entity.dto.CoursePlusTeacherModel;
+import com.example.studentmanagementapplicationn.models.dto.CoursePlusTeacherModel;
 import com.example.studentmanagementapplicationn.models.*;
 import com.example.studentmanagementapplicationn.services.CourseService;
 import com.example.studentmanagementapplicationn.services.StudentGradesService;

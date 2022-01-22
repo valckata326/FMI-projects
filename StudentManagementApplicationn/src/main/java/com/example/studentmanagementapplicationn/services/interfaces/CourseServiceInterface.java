@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 public interface CourseServiceInterface {
-    void add(Course course);
+    void addCourse(AddCourseModel addCourseModel);
 
     void setTeacher(Long teacherId, Long courseId);
 

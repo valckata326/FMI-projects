@@ -1,11 +1,15 @@
-<div *ngIf="isAdmin() || isTeacher()" class="box">
-  <h2>Add student to course:</h2>
-  <select (change)="filterStudents()" class="select-menu" id="course" placeholder="Select course">
-    <option *ngFor="let course of courses" id="course{{course.courseId}}">{{course.courseId}} {{course.courseName}}</option>
-  </select>
-  <select (change)="makeAddButtonVisible()" style="visibility: hidden;" id="students" class="select-menu">
-    <option>Select student</option>
-    <option  *ngFor="let student of students">{{student.studentId}} {{student.studentName}}</option>
-  </select>
-  <input style="visibility: hidden" id="add-student-button" type="button" value="Add student" (click)="addStudentToCourse();"/>
+<div class="login" class="box">
+  <div class="login-triangle"></div>
+  <h2 class="login-header">Add Student to FMI</h2>
+  <form class="login-container">
+    <select (change)="filterStudents()" class="select-menu" id="course" placeholder="Select course">
+      <option>Select course</option>
+      <option *ngFor="let course of courses" id="course{{course.courseId}}">{{course.courseId}} {{course.courseName}}</option>
+    </select>
+    <select (change)="makeAddButtonVisible()" style="visibility: hidden;" id="students" class="select-menu">
+      <option>Select student</option>
+      <option  *ngFor="let student of students">{{student.studentId}} {{student.studentName}}</option>
+    </select>
+    <input style="visibility: hidden" id="add-student-button" type="button" value="Add student" (click)="addStudentToCourse();"/>
+  </form>
 </div>

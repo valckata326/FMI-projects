@@ -61,7 +61,8 @@ body {
 .login input[type="email"],
 .login input[type="password"] {
   background: #fff;
-  border-color: #bbb;
+  border-width: 1px;
+  border-style: solid;
   color: #555;
 }
 
@@ -119,4 +120,10 @@ body {
 
 .register_navigation input:hover {
   background: #17c;
+}
+
+#error_message {
+  font-family: cursive;
+  text-align: center;
+  color: red;
 }

@@ -18,10 +18,11 @@ export class TeacherRegisterComponent implements OnInit {
               private httpClient: HttpClient) {
     this.registerForm = this.formBuilder.group({
       'username': ['', Validators.required],
-      'password': ['', Validators.required],
+      'password': ['', Validators.required, Validators.minLength(5), Validators.maxLength(15)],
+      'confirm_password': ['', Validators.required, Validators.minLength(5), Validators.maxLength(15)],
       'name': ['', Validators.required],
       'degree': ['', Validators.required]
-    })
+    });
   }
 
   ngOnInit(): void {
@@ -40,19 +41,33 @@ export class TeacherRegisterComponent implements OnInit {
   }
 
   registerTeacher() {
+    if (this.registerForm.errors != null) {
+      // @ts-ignore
+      document.getElementById(`error_message`).style.display = "block";
+      return;
+    }
     let registerUser: RegisterTeacherModel = this.registerForm.value;
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.httpClient.post(this.SERVER_URL, JSON.stringify(registerUser), {headers})
-      .subscribe(response => {
-          //console.log(response);
-          //console.log(registerUser);
+      .subscribe(() => {
           this.router.navigateByUrl('')
         },
-        (err) => {
+        () => {
           // @ts-ignore
           document.getElementById(`error_message`).style.display = "block";
-          var myVar = 123;
         })
   }
 
+  checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordKey],
+          passwordConfirmationInput = group.controls[passwordConfirmationKey];
+      if (passwordInput.value !== passwordConfirmationInput.value) {
+        return passwordConfirmationInput.setErrors({notEquivalent: true})
+      }
+      else {
+          return passwordConfirmationInput.setErrors(null);
+      }
+    }
+  }
 }

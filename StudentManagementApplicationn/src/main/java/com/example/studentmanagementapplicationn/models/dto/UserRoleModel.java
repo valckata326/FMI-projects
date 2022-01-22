@@ -1,6 +1,5 @@
-package com.example.studentmanagementapplicationn.entity.dto;
+package com.example.studentmanagementapplicationn.models.dto;
 
-import com.example.studentmanagementapplicationn.entity.users.Role;
 import com.example.studentmanagementapplicationn.entity.users.Type;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

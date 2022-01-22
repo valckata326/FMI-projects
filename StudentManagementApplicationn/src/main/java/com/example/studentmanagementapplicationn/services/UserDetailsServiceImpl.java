@@ -3,7 +3,7 @@ package com.example.studentmanagementapplicationn.services;
 import com.example.studentmanagementapplicationn.constants.Constants;
 import com.example.studentmanagementapplicationn.entity.users.User;
 import com.example.studentmanagementapplicationn.repositories.UserRepository;
-import com.example.studentmanagementapplicationn.security.UserDetailsImpl;
+import com.example.studentmanagementapplicationn.auth.UserDetailsImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

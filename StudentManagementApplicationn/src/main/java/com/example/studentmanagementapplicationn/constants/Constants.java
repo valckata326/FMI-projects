@@ -34,4 +34,6 @@ public interface Constants {
     String SUCCESSFULLY_ADDED_TEACHER = "Successfully added teacher";
     String SUCCESSFULLY_REGISTERED_USER = "User registered successfully!";
     String SUCCESSFULLY_REGISTERED_STUDENT_MESSAGE = "Successfully added student!";
+    String SUCCESSFULLY_AUTHORIZED_USER = "Successfully authorized user!";
+    String COURSE_ALREADY_EXISTS_EXCEPTION = "Course with this name is already existing!";
 }

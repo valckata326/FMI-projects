@@ -25,4 +25,12 @@ export class NavBarComponent implements OnInit {
     localStorage.clear();
     this.router.navigateByUrl("");
   }
+
+  onAdmin() {
+    location.assign("admin");
+  }
+
+  isAdmin(): boolean {
+    return localStorage.getItem('roles') === 'ADMIN';
+  }
 }

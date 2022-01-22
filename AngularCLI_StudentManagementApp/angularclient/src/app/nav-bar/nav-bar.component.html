@@ -10,7 +10,7 @@
   <ul id="nav" class="nav">
     <a (click)="onHome()">Home</a>
     <a (click)="onCourse()">Courses</a>
-    <a>Admin</a>
+    <a *ngIf="isAdmin()" (click)="onAdmin()">Admin</a>
     <a (click)="onLogout()">Logout</a>
   </ul>
 </nav>

@@ -89,11 +89,15 @@ body {
 
 .register_navigation {
   display: inline-flex;
-  margin: 12px auto;
+  margin: 20px auto;
   text-align: center;
 }
 .navigate_definite_user {
   text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
 }
 
 .register_navigation input {
@@ -107,10 +111,10 @@ body {
   width: 100%;
   border-width: 3px;
   border-style: solid;
-  padding: 16px;
+  padding: 200px;
   outline: 0;
   font-family: cursive;
-  font-size: 0.95em;
+  font-size: 3em;
 }
 
 .register_navigation p {

@@ -1,0 +1,26 @@
+<div>
+  <h2>Users</h2>
+  <div class="table-wrapper">
+    <table class="fl-table">
+      <thead>
+      <tr>
+        <th>Username</th>
+        <th>Role</th>
+        <th>Confirmation</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let field of _users">
+        <td>
+          {{field.username}}
+        </td>
+        <td>
+          {{field.role}}
+        </td>
+        <td><button *ngIf="isUser(field.role)" (click)="confirmUser(field.username)">Confirm user</button></td>
+      </tr>
+      <tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,12 +1,11 @@
 package com.example.studentmanagementapplicationn.services;
 
 import com.example.studentmanagementapplicationn.constants.Constants;
-import com.example.studentmanagementapplicationn.entity.dto.CoursePlusTeacherModel;
+import com.example.studentmanagementapplicationn.models.dto.CoursePlusTeacherModel;
 import com.example.studentmanagementapplicationn.entity.university.Course;
 import com.example.studentmanagementapplicationn.entity.university.Teacher;
 import com.example.studentmanagementapplicationn.exceptions.TeacherNotExistsException;
 import com.example.studentmanagementapplicationn.models.CourseNameAverageGradeModel;
-import com.example.studentmanagementapplicationn.models.TeacherModel;
 import com.example.studentmanagementapplicationn.models.TeacherNameIdModel;
 import com.example.studentmanagementapplicationn.repositories.CourseRepository;
 import com.example.studentmanagementapplicationn.repositories.TeacherRepository;

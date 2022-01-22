@@ -1,24 +1,26 @@
-<div *ngIf="isAdmin() || isTeacher()" class="box">
-  <h2>Add student grade to course</h2>
+<div class="login" class="box">
+  <div class="login-triangle"></div>
+  <h2 class="login-header">Add Grade for Student</h2>
+  <form class="login-container">
+    <select (change)="takeCourseStudents();" class="add-grade-select-menu" id="add-grade-course"
+       placeholder="Select course">
+      <option style="visibility: visible;" id="default-course">Select course</option>
+      <option *ngFor="let course of courses" id="add-grade-course{{course.courseId}}">{{course.courseId}} {{course.courseName}}</option>
+    </select>
 
-  <select (change)="takeCourseStudents(); hideDefaultCourse()" class="add-grade-select-menu" id="add-grade-course"
-          placeholder="Select course">
-    <option style="visibility: visible;" id="default-course">Select course</option>
-    <option *ngFor="let course of courses" id="add-grade-course{{course.courseId}}">{{course.courseId}} {{course.courseName}}</option>
-  </select>
+    <select (change)="makeGradeButtonActive()" style="visibility: hidden;" id="add-grade-students" class="add-grade-select-menu">
+      <option *ngFor="let student of students" id="add-grade-student{{student.studentId}}">{{student.studentId}} {{student.studentName}}</option>
+    </select>
 
-  <select (change)="makeGradeButtonActive()" style="visibility: hidden;" id="add-grade-students" class="add-grade-select-menu">
-    <option *ngFor="let student of students" id="add-grade-student{{student.studentId}}">{{student.studentId}} {{student.studentName}}</option>
-  </select>
+    <select (change)="makeAddGradeButtonActive()" style="visibility: hidden;" id="add-grade-grade" class="add-grade-select-menu">
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+    </select>
 
-  <select (change)="makeAddGradeButtonActive()" style="visibility: hidden;" id="add-grade-grade" class="add-grade-select-menu">
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-    <option>6</option>
-  </select>
-
-  <input style="visibility: hidden" id="add-grade-button" type="button" value="Add student grade"
-         (click)="addStudentGradeToCourse()"/>
+    <input style="visibility: hidden" id="add-grade-button" type="button" value="Add student grade"
+       (click)="addStudentGradeToCourse()"/>
+  </form>
 </div>

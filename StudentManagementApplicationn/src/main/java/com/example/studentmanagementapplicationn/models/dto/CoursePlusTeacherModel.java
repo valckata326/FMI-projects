@@ -1,4 +1,4 @@
-package com.example.studentmanagementapplicationn.entity.dto;
+package com.example.studentmanagementapplicationn.models.dto;
 
 import com.example.studentmanagementapplicationn.entity.university.Course;
 import lombok.AllArgsConstructor;

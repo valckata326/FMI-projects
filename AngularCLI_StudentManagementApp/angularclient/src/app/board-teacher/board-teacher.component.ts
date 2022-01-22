@@ -10,6 +10,7 @@ export class BoardTeacherComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

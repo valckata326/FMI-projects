@@ -6,10 +6,7 @@ import com.example.studentmanagementapplicationn.entity.university.Course;
 import com.example.studentmanagementapplicationn.entity.university.Student;
 import com.example.studentmanagementapplicationn.entity.university.StudentCourse;
 import com.example.studentmanagementapplicationn.entity.university.Teacher;
-import com.example.studentmanagementapplicationn.exceptions.CourseNotExistException;
-import com.example.studentmanagementapplicationn.exceptions.StudentAlreadyExistsException;
-import com.example.studentmanagementapplicationn.exceptions.StudentNotExistsException;
-import com.example.studentmanagementapplicationn.exceptions.TeacherNotExistsException;
+import com.example.studentmanagementapplicationn.exceptions.*;
 import com.example.studentmanagementapplicationn.models.*;
 import com.example.studentmanagementapplicationn.repositories.CourseRepository;
 import com.example.studentmanagementapplicationn.repositories.StudentCourseRepository;
@@ -29,13 +26,13 @@ import java.util.stream.Collectors;
 
 @Service
 public class CourseService implements CourseServiceInterface {
-    private CourseRepository courseRepository;
+    private final CourseRepository courseRepository;
 
-    private TeacherRepository teacherRepository;
+    private final TeacherRepository teacherRepository;
 
-    private StudentRepository studentRepository;
+    private final StudentRepository studentRepository;
 
-    private StudentCourseRepository studentCourseRepository;
+    private final StudentCourseRepository studentCourseRepository;
 
     @Autowired
     public CourseService(CourseRepository courseRepository,
@@ -198,8 +195,15 @@ public class CourseService implements CourseServiceInterface {
     }
 
     @Override
-    public void add(Course course) {
-        this.courseRepository.save(course);
+    public void addCourse(AddCourseModel courseModel) {
+        Optional<Course> course = courseRepository.findByName(courseModel.getCourseName());
+
+        if (course.isPresent()) {
+            throw new CourseAlreadyExistsException(Constants.COURSE_ALREADY_EXISTS_EXCEPTION);
+        }
+
+        Course courseToAdd = new Course(courseModel.getCourseName(), courseModel.getTotalHours());
+        courseRepository.save(courseToAdd);
     }
 
     @Override

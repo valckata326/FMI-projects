@@ -1,0 +1,14 @@
+<div class="login">
+  <div class="login-triangle"></div>
+
+  <h2 class="login-header">Add Course to FMI</h2>
+
+  <form class="login-container" method="post" [formGroup] = "addCourseForm" (ngSubmit)="addCourse()">
+    <p><input type="text" class="form-control" name="courseName"
+              id="courseName" formControlName="courseName" placeholder="Course Name" required=""></p>
+    <p><input type="number" class="form-control" name="totalHours"
+              id="totalHours" formControlName="totalHours" placeholder="Total Hours" required=""></p>
+    <p id="error_message"hidden>Course with this name already exists</p>
+    <p><input type="submit" value="Add Course"></p>
+  </form>
+</div>

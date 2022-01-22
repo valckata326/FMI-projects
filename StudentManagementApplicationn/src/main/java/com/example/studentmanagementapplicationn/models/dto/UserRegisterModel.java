@@ -1,4 +1,4 @@
-package com.example.studentmanagementapplicationn.entity.dto;
+package com.example.studentmanagementapplicationn.models.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

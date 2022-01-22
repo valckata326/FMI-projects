@@ -15,8 +15,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http"
 import {ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
-import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component';
+import {RegisterComponent} from './register/register.component'
 import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardUserComponent } from './board-user/board-user.component';
@@ -38,13 +37,15 @@ import { CourseStudentsComponent } from './course/course-students/course-student
 import { AddStudentToCourseComponent } from './course/add-student-to-course/add-student-to-course.component';
 import { AddStudentGradeToCourseComponent } from './course/add-student-grade-to-course/add-student-grade-to-course.component';
 import { AddTeacherToCourseComponent } from './course/add-teacher-to-course/add-teacher-to-course.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { AllUsersComponent } from './admin-page/all-users/all-users.component';
+import { AddCourseComponent } from './admin-page/add-course/add-course.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
     ProfileComponent,
     BoardAdminComponent,
     BoardUserComponent,
@@ -64,7 +65,10 @@ import { AddTeacherToCourseComponent } from './course/add-teacher-to-course/add-
     CourseStudentsComponent,
     AddStudentToCourseComponent,
     AddStudentGradeToCourseComponent,
-    AddTeacherToCourseComponent
+    AddTeacherToCourseComponent,
+    AdminPageComponent,
+    AllUsersComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,
