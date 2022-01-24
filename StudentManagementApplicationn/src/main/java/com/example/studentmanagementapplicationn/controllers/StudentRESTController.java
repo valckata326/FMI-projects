@@ -1,6 +1,7 @@
 package com.example.studentmanagementapplicationn.controllers;
 
 import com.example.studentmanagementapplicationn.entity.university.Course;
+import com.example.studentmanagementapplicationn.models.CourseNameAverageGradeModel;
 import com.example.studentmanagementapplicationn.models.Grade;
 import com.example.studentmanagementapplicationn.models.StudentModel;
 import com.example.studentmanagementapplicationn.services.CourseService;
@@ -54,5 +55,12 @@ public class StudentRESTController {
     @PreAuthorize("hasAuthority('STUDENT')")
     public ResponseEntity<Grade> studentAverageGrade(@PathVariable(name = "id") Long studentId) {
         return ResponseEntity.ok(new Grade(studentService.getAverageGradeForAStudent(studentId)));
+    }
+
+    @GetMapping("/getStudentCoursesWithGrade/{id}")
+    @PreAuthorize("hasAuthority('STUDENT')")
+    public ResponseEntity<List<CourseNameAverageGradeModel>> studentCoursesWithGrade(@PathVariable(name = "id")
+                                                                                                 Long studentId) {
+        return ResponseEntity.ok(this.studentGradesService.getAllCoursesWithAverageGradeForStudent(studentId));
     }
 }

@@ -1,0 +1,23 @@
+<div *ngIf = "isStudent()">
+    <h2>Your courses</h2>
+    <div class="table-wrapper">
+      <table class="fl-table">
+        <thead>
+        <tr>
+          <th>Course</th>
+          <th>Grade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let field of courses; let i = index">
+          <td>
+            {{field.courseName}}
+          </td>
+          <td>
+            {{field.averageGrade}}
+          </td>
+        </tr>
+        <tbody>
+      </table>
+    </div>
+  </div>

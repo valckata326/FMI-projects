@@ -1,4 +1,4 @@
-<div class="login" class="box">
+<div *ngIf = "isTeacher() || isAdmin()" class="login" class="box">
   <div class="login-triangle"></div>
   <h2 class="login-header">Add Student to FMI</h2>
   <form class="login-container">

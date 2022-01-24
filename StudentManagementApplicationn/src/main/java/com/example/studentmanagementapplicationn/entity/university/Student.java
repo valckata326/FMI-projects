@@ -1,7 +1,9 @@
 package com.example.studentmanagementapplicationn.entity.university;
 
+import com.example.studentmanagementapplicationn.constants.Constants;
 import com.example.studentmanagementapplicationn.entity.users.User;
 import com.example.studentmanagementapplicationn.entity.base.NamedEntity;
+import com.example.studentmanagementapplicationn.models.CourseNameAverageGradeModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 
 @Entity
@@ -67,12 +68,23 @@ public class Student extends NamedEntity {
             return 2D;
         }
 
-        Double sumGrades = courses
-                .stream()
-                .map(StudentCourse::getGrade)
-                .reduce(Double::sum)
-                .orElse(2.0);
-
-        return sumGrades / courses.size();
+        Map<String, List<Double>> studentCoursesGrades = new HashMap<>();
+        List<CourseNameAverageGradeModel> studentCourseNameList = new ArrayList<>();
+        for (StudentCourse current : courses) {
+            studentCoursesGrades.putIfAbsent(current.getCourse().getName(), new ArrayList<>());
+            if (current.getGrade() != Constants.INVALID_GRADE) {
+                studentCoursesGrades.get(current.getCourse().getName()).add(current.getGrade());
+            }
+        }
+        for (Map.Entry<String, List<Double>> current : studentCoursesGrades.entrySet()) {
+            OptionalDouble gradeForCourse = current.getValue().stream().mapToDouble(a -> a).average();
+            CourseNameAverageGradeModel currentModel
+                    = new CourseNameAverageGradeModel(current.getKey(), !gradeForCourse.isEmpty()
+                    ? gradeForCourse.getAsDouble() : 0);
+            studentCourseNameList.add(currentModel);
+        }
+        return studentCourseNameList.stream()
+                .map(CourseNameAverageGradeModel::getAverageGrade)
+                .mapToDouble(a -> a).average().getAsDouble();
     }
 }

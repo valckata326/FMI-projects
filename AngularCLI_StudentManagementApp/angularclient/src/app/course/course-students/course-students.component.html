@@ -4,21 +4,28 @@
     <table class="fl-table">
       <tbody *ngFor="let field of coursesWithStudents">
       <tr>
-        <td colspan="2">
+        <td></td>
+        <td>
           <b>{{field.courseName}}</b>
         </td>
+        <td></td>
       </tr>
-      <ol>
-        <li *ngFor="let student of field.studentList">
-          <tr style="width: 100% !important;">
-            <td>{{student.studentName}}</td>
-            <td *ngIf="isAdmin() || isTeacher()">{{student.grade}}</td>
-          </tr>
-        </li>
-      </ol>
       <tr>
-        <td colspan="2" *ngIf="isTeacher() || isAdmin()">
-          Average grade: {{field.averageGrade}}
+        <td>No:</td>
+        <td>Student:</td>
+        <td>Grade:</td>  
+      </tr>
+      <tr *ngFor="let student of field.studentList; let indexOfElement = index">
+        <td>{{indexOfElement + 1}}</td>
+        <td>{{student.studentName}}</td>
+        <td *ngIf="isAdmin() || isTeacher()">{{student.grade}}</td>
+      </tr>
+      
+      <tr>
+        <td></td>
+        <td style="text-align: right !important;">Average grade:</td>
+        <td *ngIf="isTeacher() || isAdmin()">
+           {{field.averageGrade}}
         </td>
       </tr>
       <tbody>

@@ -82,7 +82,7 @@ export class AddTeacherToCourseComponent implements OnInit {
     let address = this.ADD_TEACHER_TO_COURSE + teacherId + '/' + courseID;
     this.httpClient.get(address, {headers: this.contentType})
       .subscribe(response => {
-        console.log(response);
+        window.location.reload();
       });
   }
 }

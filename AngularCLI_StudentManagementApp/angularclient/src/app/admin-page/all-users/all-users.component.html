@@ -17,7 +17,10 @@
         <td>
           {{field.role}}
         </td>
-        <td><button *ngIf="isUser(field.role)" (click)="confirmUser(field.username)">Confirm user</button></td>
+        <td>
+          <button *ngIf="isUser(field.role)" (click)="confirmUser(field.username)">Confirm user</button>
+          <b *ngIf="!isUser(field.role)">Confirmed!</b>
+        </td>
       </tr>
       <tbody>
     </table>

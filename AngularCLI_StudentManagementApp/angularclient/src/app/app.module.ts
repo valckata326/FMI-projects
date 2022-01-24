@@ -26,7 +26,6 @@ import { TeacherRegisterComponent } from './register/user/teacher-register/teach
 import { StudentRegisterComponent } from './register/user/student-register/student-register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { StudentAverageGradeComponent } from './dashboard/student-average-grade/student-average-grade.component';
 import { CoursesTeacherTableComponent } from './dashboard/courses-teacher-table/courses-teacher-table.component';
 import {AuthInterceptor} from "./_helpers/auth.interceptor";
 import { TeacherCoursesComponent } from './dashboard/teacher-courses/teacher-courses.component';
@@ -40,6 +39,8 @@ import { AddTeacherToCourseComponent } from './course/add-teacher-to-course/add-
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AllUsersComponent } from './admin-page/all-users/all-users.component';
 import { AddCourseComponent } from './admin-page/add-course/add-course.component';
+import { StudentCoursesGradesComponent } from './dashboard/student-courses-grades/student-courses-grades.component';
+import { StudentAverageGradeComponent } from './dashboard/student-average-grade/student-average-grade.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { AddCourseComponent } from './admin-page/add-course/add-course.component
     AddTeacherToCourseComponent,
     AdminPageComponent,
     AllUsersComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    StudentCoursesGradesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
-<div class="login" class="box">
+<div *ngIf = "isTeacher() || isAdmin()" class="login" class="box">
   <div class="login-triangle"></div>
   <h2 class="login-header">Add Grade for Student</h2>
   <form class="login-container">
-    <select (change)="takeCourseStudents();" class="add-grade-select-menu" id="add-grade-course"
+    <select (change)="takeCourseStudents(); hideDefaultCourse()" class="add-grade-select-menu" id="add-grade-course"
        placeholder="Select course">
       <option style="visibility: visible;" id="default-course">Select course</option>
       <option *ngFor="let course of courses" id="add-grade-course{{course.courseId}}">{{course.courseId}} {{course.courseName}}</option>
